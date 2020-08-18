@@ -10,7 +10,8 @@
     "server-dev": "cd server && yarn run dev",
     "client-dev": "cd client && yarn run dev",
     "dev": "concurrently \"yarn run server-dev\" \"yarn run client-dev\"",
-    "git-combo": "git add . && git commit -am \"Yet another commit\" && git push"
+    "git-combo": "git add . && git commit -am \"Yet another commit\" && git push",
+    "install": "cd server && yarn && cd ../client && yarn"
   },
   "devDependencies": {
     "concurrently": "^5.3.0"
