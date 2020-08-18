@@ -6,6 +6,7 @@
   let rawImgs;
   let resizedImgs;
   let description;
+  let fullname;
 
   let resizeImage = (file) => {
     return new Promise((resolve, reject) => {
@@ -36,9 +37,10 @@
 
     let formData = new FormData();
 
-    resizedImgs.forEach((resizedImg) => formData.append("images", resizedImg));
-
     formData.append("description", description);
+    formData.append("fullname", fullname);
+
+    resizedImgs.forEach((resizedImg) => formData.append("images", resizedImg));
 
     axios
       .post("http://localhost:5001/upload", formData)
@@ -53,7 +55,10 @@
 
 <h1>Fill this form!</h1>
 
-<input type="text" bind:value={description} />
+<input type="text" bind:value={fullname} placeholder="full name" />
+<br />
+<br />
+<input type="text" bind:value={description} placeholder="description" />
 <br />
 <br />
 <input type="file" bind:files={rawImgs} multiple />

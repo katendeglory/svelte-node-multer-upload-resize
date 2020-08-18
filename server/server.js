@@ -19,6 +19,7 @@ const storage = multer.diskStorage({
     const prefix = Date.now();
     const destFileName = fieldname + "-" + prefix + "." + extension;
     // console.log(destFileName);
+    console.log(req.body.fullname);
     cb(null, destFileName);
   }
 });
