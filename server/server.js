@@ -19,7 +19,9 @@ const storage = multer.diskStorage({
     const prefix = Date.now();
     const destFileName = fieldname + "-" + prefix + "." + extension;
     // console.log(destFileName);
-    console.log(req.body.fullname);
+    // console.log(req.body.fullname);
+    /* Make some stuff happen here with the database */
+    /* Req.user to get who's uploading, consider placing passport middleware before this one*/
     cb(null, destFileName);
   }
 });
